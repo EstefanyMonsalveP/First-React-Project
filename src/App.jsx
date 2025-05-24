@@ -1,14 +1,26 @@
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
-
+import { db } from "./data/db";
+import Garment from "./components/Garment";
 function App() {
+  const [data, setData] = useState(db);
   return (
     <>
       <Header />
 
       <main className="container">
-        <h2 className="text-center">Our Collection</h2>
+        <h3 className="text-center">Our Collection</h3>
 
-        <div className="flex-row mt-large"></div>
+        <div className="flex-row mt-large">
+          <Garment />
+          <Garment />
+          <Garment />
+          <Garment />
+          <Garment />
+          <Garment />
+          <Garment />
+          <Garment />
+        </div>
       </main>
     </>
   );

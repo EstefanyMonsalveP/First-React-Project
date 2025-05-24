@@ -1,15 +1,14 @@
-.header{
+.header {
   position: relative;
-
 }
 
-.header img{
+.header img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-.header .carts{
+.header .carts {
   position: absolute;
   right: 20px;
   top: 3%;
@@ -19,9 +18,9 @@
   gap: 12px;
 }
 
-.header .cart-button{
-    width: 29px;
-    height: 29px;
+.header .cart-button {
+  width: 29px;
+  height: 29px;
 }
 
 .header .delivery-button {
@@ -29,25 +28,100 @@
   height: 37px;
 }
 
-.container{
+.container {
   max-width: 1200px;
   margin: 5rem auto 0 auto;
   padding: 0 1 rem;
 }
 
-.text-center{
+.text-center {
   text-align: center;
   font-size: 4rem;
   color: rgb(45, 77, 45);
 }
 
-.flex-row{
+.flex-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-
 }
 
-.mt-large{
+.mt-large {
   margin-top: 5rem;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.column {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .column-md {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .column-lg {
+    flex: 0 0 33.3333%;
+    max-width: 80%;
+  }
+}
+
+.margin-y-lg {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.column-lg img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.column details {
+  text-align: justify;
+  padding-top: 5px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: rgb(45, 77, 45);
+  margin-bottom: 0;
+  text-align: center;
+  font-family: serif;
+}
+
+p {
+  text-align: center;
+  font-family: serif;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.price {
+  font-size: 1.8rem;
+  color: rgb(76, 109, 76);
+  font-weight: bold;
+}
+
+.btn {
+  background-color: black;
+  color: white;
+  border-radius: 5%;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.reference {
+  color: gray;
 }
