@@ -13,7 +13,7 @@ function App() {
 
         <div className="flex-row mt-large">
           {data.map((garment) => (
-            <Garment garment={garment} />
+            <Garment key={garment.id} garment={garment} />
           ))}
         </div>
       </main>
