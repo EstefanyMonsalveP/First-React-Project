@@ -1,1 +1,30 @@
+.header{
+  position: relative;
 
+}
+
+.header img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.header .carts{
+  position: absolute;
+  right: 20px;
+  top: 3%;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  gap: 12px;
+}
+
+.header .cart-button{
+    width: 29px;
+    height: 29px;
+}
+
+.header .delivery-button {
+  width: 37px;
+  height: 37px;
+}
