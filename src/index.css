@@ -106,6 +106,8 @@ p {
   font-family: serif;
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
+  margin-left: auto;
+  margin-top: auto;
 }
 
 .price {
@@ -120,6 +122,10 @@ p {
   border-radius: 5%;
   padding: 10px 20px;
   cursor: pointer;
+  font-weight: bold;
+  display: block;
+  margin: 1rem auto 0 auto;
+  width: max-content;
 }
 
 .reference {

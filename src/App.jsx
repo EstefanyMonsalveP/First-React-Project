@@ -12,14 +12,9 @@ function App() {
         <h3 className="text-center">Our Collection</h3>
 
         <div className="flex-row mt-large">
-          <Garment />
-          <Garment />
-          <Garment />
-          <Garment />
-          <Garment />
-          <Garment />
-          <Garment />
-          <Garment />
+          {data.map((garment) => (
+            <Garment garment={garment} />
+          ))}
         </div>
       </main>
     </>

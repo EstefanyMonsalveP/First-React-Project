@@ -82,8 +82,9 @@ export const db = [
   },
   {
     id: 10,
-    name: "https://images.unsplash.com/photo-1613594526783-3284e5eb86de?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    image: "",
+    name: "Plaid Shirt",
+    image:
+      "https://images.unsplash.com/photo-1613594526783-3284e5eb86de?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     reference: "SHT1010",
     sizes: { S: true, M: true, L: true, XL: true },
     price: 28.75,
@@ -101,7 +102,7 @@ export const db = [
     id: 12,
     name: "White Sneakers",
     image:
-      "https://images.unsplash.com/photo-1663151860150-98ba9a22d696?q=80&w=1454&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1663151862988-280c2efc38a1?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     reference: "SNK1212",
     sizes: { S: false, M: true, L: true, XL: false },
     price: 59.5,
