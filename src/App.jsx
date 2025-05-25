@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Header from "./components/Header";
 import { db } from "./data/db";
 import Garment from "./components/Garment";
 function App() {
   const [data, setData] = useState(db);
+  const [cart, setCart] = useState([]);
   return (
     <>
       <Header />
@@ -13,7 +14,7 @@ function App() {
 
         <div className="flex-row mt-large">
           {data.map((garment) => (
-            <Garment key={garment.id} garment={garment} />
+            <Garment key={garment.id} garment={garment} setCart={setCart} />
           ))}
         </div>
       </main>
