@@ -1,5 +1,5 @@
 import { useState } from "react";
-export default function Garment({ garment, setCart }) {
+export default function Garment({ garment, addToCart }) {
   //Destructure garment object
   const { id, name, image, reference, sizes, price } = garment;
 
@@ -57,7 +57,7 @@ export default function Garment({ garment, setCart }) {
               selectedSize,
             };
 
-            setCart((prevCart) => [...prevCart, garmentToAdd]);
+            addToCart(garmentToAdd);
 
             //Reset selected size after adding to cart
             setSelectedSize(null);
