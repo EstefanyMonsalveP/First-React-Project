@@ -23,6 +23,25 @@
   height: 29px;
 }
 
+.popup-modal {
+  display: none;
+  position: absolute;
+  top: 45px;
+  bottom: 0;
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  height: 300px;
+  z-index: 100;
+  right: 0;
+}
+
+.popup-modal.block {
+  display: block;
+}
+
 .header .delivery-button {
   width: 37px;
   height: 37px;
@@ -152,4 +171,20 @@ p {
 
 .size.selected {
   background-color: rgb(187, 177, 177);
+}
+
+thead {
+  font-family: "inter";
+  font-size: 0.9rem;
+}
+
+thead th {
+  background-color: rgba(148, 167, 123, 0.815);
+  padding: 12px 10px;
+  border: none;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
 }

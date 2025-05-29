@@ -1,7 +1,7 @@
 import { useState } from "react";
 export default function Garment({ garment, addToCart }) {
   //Destructure garment object
-  const { id, name, image, reference, sizes, price } = garment;
+  const { name, image, reference, sizes, price } = garment;
 
   //useState to select a size for each garment
   const [selectedSize, setSelectedSize] = useState(null);
