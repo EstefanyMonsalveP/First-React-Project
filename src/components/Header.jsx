@@ -10,6 +10,8 @@ export default function Header({ cart }) {
     setShowPopUp(true);
   }
 
+  const isEmpty = () => cart.length === 0;
+
   return (
     <>
       <header className="header">
@@ -38,35 +40,61 @@ export default function Header({ cart }) {
           onMouseEnter={activeShowPopUp}
           onMouseLeave={() => setShowPopUp(false)}
         >
-          <p>The cart is empty</p>
-          <table>
-            <thead>
-              <tr>
-                <th>Product</th>
-                <th>Name</th>
-                <th>Size</th>
-                <th>Quantity</th>
-                <th>Price</th>
-              </tr>
-            </thead>
-            <tbody>
-              {cart.map((garment) => (
-                <tr key={garment.id}>
-                  <td>
-                    <img src={garment.image}></img>
-                  </td>
-                  <td>{garment.name}</td>
-                  <td>{garment.selectedSize}</td>
-                  <td>{garment.quantity}</td>
-                  <td style={{ fontWeight: "bold" }}>${garment.price}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-          <p className="text-TotalPay">
-            Total to pay: <span style={{ fontWeight: "bold" }}> $899</span>
-          </p>
-          <button className="btn-remove">Remove all items</button>
+          {isEmpty() ? (
+            <>
+              <div
+                style={{
+                  display: "flex",
+                  height: "auto",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  marginBottom: "20px",
+                }}
+              >
+                <img
+                  src={cartIcon}
+                  style={{
+                    width: "80px",
+                  }}
+                />
+              </div>
+
+              <p style={{ fontFamily: " Arial", fontSize: "0.9rem" }}>
+                The cart is empty
+              </p>
+            </>
+          ) : (
+            <>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>Name</th>
+                    <th>Size</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {cart.map((garment) => (
+                    <tr key={garment.id}>
+                      <td>
+                        <img src={garment.image}></img>
+                      </td>
+                      <td>{garment.name}</td>
+                      <td>{garment.selectedSize}</td>
+                      <td>{garment.quantity}</td>
+                      <td style={{ fontWeight: "bold" }}>${garment.price}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <p className="text-TotalPay">
+                Total to pay: <span style={{ fontWeight: "bold" }}> $899</span>
+              </p>
+              <button className="btn-remove">Remove all items</button>
+            </>
+          )}
         </div>
       </header>
     </>
