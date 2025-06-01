@@ -26,7 +26,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header cart={cart} />
 
       <main className="container">
         <h3 className="text-center">Our Collection</h3>

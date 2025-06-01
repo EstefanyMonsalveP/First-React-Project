@@ -3,13 +3,13 @@ import cartIcon from "../assets/shoppingCart.png";
 import deliveryCar from "../assets/delivery-car.png";
 import { useState } from "react";
 
-export default function Header() {
-  const [showModal, setShowModal] = useState(false);
+export default function Header({ cart }) {
+  const [showPopUp, setShowPopUp] = useState(false);
 
-  function activeShowModal() {
-    setShowModal(true);
+  function activeShowPopUp() {
+    setShowPopUp(true);
   }
-  console.log("Estado del modal:", showModal);
+
   return (
     <>
       <header className="header">
@@ -19,10 +19,9 @@ export default function Header() {
             src={deliveryCar}
             alt="Delivery car"
             className="delivery-button"
-            onClick={activeShowModal}
           />
           <button
-            onClick={activeShowModal}
+            onMouseOver={activeShowPopUp}
             style={{
               border: "none",
               background: "none",
@@ -33,7 +32,13 @@ export default function Header() {
             <img src={cartIcon} alt="Shopping cart" className="cart-button" />
           </button>
         </div>
-        <div id="myModal" className={`popup-modal ${showModal ? "block" : ""}`}>
+        <div
+          id="myModal"
+          className={`popup-modal ${showPopUp ? "block" : ""}`}
+          onMouseEnter={activeShowPopUp}
+          onMouseLeave={() => setShowPopUp(false)}
+        >
+          <p>The cart is empty</p>
           <table>
             <thead>
               <tr>
@@ -45,11 +50,23 @@ export default function Header() {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td></td>
-              </tr>
+              {cart.map((garment) => (
+                <tr key={garment.id}>
+                  <td>
+                    <img src={garment.image}></img>
+                  </td>
+                  <td>{garment.name}</td>
+                  <td>{garment.selectedSize}</td>
+                  <td>{garment.quantity}</td>
+                  <td style={{ fontWeight: "bold" }}>${garment.price}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
+          <p className="text-TotalPay">
+            Total to pay: <span style={{ fontWeight: "bold" }}> $899</span>
+          </p>
+          <button className="btn-remove">Remove all items</button>
         </div>
       </header>
     </>
