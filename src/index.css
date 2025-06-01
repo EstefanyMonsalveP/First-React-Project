@@ -174,8 +174,8 @@ p {
 }
 
 thead {
-  font-family: "inter";
-  font-size: 0.9rem;
+  font-family: "arial";
+  font-size: 0.8rem;
 }
 
 thead th {
@@ -193,7 +193,7 @@ table {
 td {
   font-size: 0.8rem;
   text-align: center;
-  font-family: "inter";
+  font-family: "arial";
   word-wrap: break-word;
   white-space: normal;
 }

@@ -11,6 +11,8 @@ export default function Header({ cart }) {
   }
 
   const isEmpty = () => cart.length === 0;
+  const totalItemsPrice = () =>
+    cart.reduce((total, item) => total + item.quantity * item.price, 0);
 
   return (
     <>
@@ -90,7 +92,8 @@ export default function Header({ cart }) {
                 </tbody>
               </table>
               <p className="text-TotalPay">
-                Total to pay: <span style={{ fontWeight: "bold" }}> $899</span>
+                Total to pay:{" "}
+                <span style={{ fontWeight: "bold" }}>{totalItemsPrice()}</span>
               </p>
               <button className="btn-remove">Remove all items</button>
             </>
