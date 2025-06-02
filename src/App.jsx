@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import { db } from "./data/db";
 import Garment from "./components/Garment";
 function App() {
-  const [data, setData] = useState(db);
+  const [data] = useState(db);
   const [cart, setCart] = useState([]);
 
   // Add an item to the cart

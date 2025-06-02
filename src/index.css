@@ -28,7 +28,7 @@
   position: absolute;
   top: 45px;
   right: 0;
-  width: 300px;
+  width: 340px;
   max-height: 80vh;
   background-color: white;
   padding: 10px;
@@ -179,7 +179,7 @@ thead {
 }
 
 thead th {
-  background-color: rgba(148, 167, 123, 0.815);
+  background-color: rgba(228, 228, 228, 0.815);
   padding: 12px 10px;
   border: none;
   text-align: left;
@@ -217,4 +217,17 @@ td {
   background-color: rgba(184, 180, 180, 0.822);
   height: 0.3vh;
   width: 100%;
+}
+
+.iconXmark {
+  color: red;
+  width: 20px;
+  height: auto;
+  cursor: pointer;
+}
+
+.iconsMinus-plus {
+  height: 20px;
+  width: auto;
+  cursor: pointer;
 }

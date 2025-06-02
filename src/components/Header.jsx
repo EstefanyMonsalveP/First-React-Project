@@ -2,6 +2,10 @@ import imgHeader from "../assets/imgHeader.png";
 import cartIcon from "../assets/shoppingCart.png";
 import deliveryCar from "../assets/delivery-car.png";
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
+import { faSquarePlus } from "@fortawesome/free-solid-svg-icons";
+import { faSquareMinus } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header({ cart }) {
   const [showPopUp, setShowPopUp] = useState(false);
@@ -75,6 +79,7 @@ export default function Header({ cart }) {
                     <th>Size</th>
                     <th>Quantity</th>
                     <th>Price</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -85,9 +90,31 @@ export default function Header({ cart }) {
                       </td>
                       <td>{garment.name}</td>
                       <td>{garment.selectedSize}</td>
-                      <td>{garment.quantity}</td>
+                      <td
+                        style={{
+                          display: "flex",
+                          gap: "5px",
+                          alignItems: "center",
+                          height: "140px",
+                        }}
+                      >
+                        <FontAwesomeIcon
+                          icon={faSquareMinus}
+                          className="iconsMinus-plus "
+                        />
+                        {garment.quantity}
+                        <FontAwesomeIcon
+                          icon={faSquarePlus}
+                          className="iconsMinus-plus "
+                        />
+                      </td>
                       <td style={{ fontWeight: "bold" }}>${garment.price}</td>
-                      <td></td>
+                      <td>
+                        <FontAwesomeIcon
+                          icon={faCircleXmark}
+                          className="iconXmark"
+                        />
+                      </td>
                     </tr>
                   ))}
                 </tbody>
