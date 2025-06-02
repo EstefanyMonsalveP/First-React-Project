@@ -7,7 +7,7 @@ import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { faSquarePlus } from "@fortawesome/free-solid-svg-icons";
 import { faSquareMinus } from "@fortawesome/free-solid-svg-icons";
 
-export default function Header({ cart }) {
+export default function Header({ cart, removeToCart }) {
   const [showPopUp, setShowPopUp] = useState(false);
 
   function activeShowPopUp() {
@@ -92,27 +92,36 @@ export default function Header({ cart }) {
                       <td>{garment.selectedSize}</td>
                       <td
                         style={{
-                          display: "flex",
-                          gap: "5px",
-                          alignItems: "center",
                           height: "140px",
+                          textAlign: "center",
+                          verticalAlign: "middle",
                         }}
                       >
-                        <FontAwesomeIcon
-                          icon={faSquareMinus}
-                          className="iconsMinus-plus "
-                        />
-                        {garment.quantity}
-                        <FontAwesomeIcon
-                          icon={faSquarePlus}
-                          className="iconsMinus-plus "
-                        />
+                        <div
+                          style={{
+                            display: "flex",
+                            gap: "5px",
+                            alignItems: "center",
+                            justifyContent: "center",
+                          }}
+                        >
+                          <FontAwesomeIcon
+                            icon={faSquareMinus}
+                            className="iconsMinus-plus"
+                          />
+                          {garment.quantity}
+                          <FontAwesomeIcon
+                            icon={faSquarePlus}
+                            className="iconsMinus-plus"
+                          />
+                        </div>
                       </td>
                       <td style={{ fontWeight: "bold" }}>${garment.price}</td>
                       <td>
                         <FontAwesomeIcon
                           icon={faCircleXmark}
                           className="iconXmark"
+                          onClick={() => removeToCart(garment.id)}
                         />
                       </td>
                     </tr>

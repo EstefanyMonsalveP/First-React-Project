@@ -24,9 +24,13 @@ function App() {
     }
   }
 
+  function removeToCart(id) {
+    setCart((prevCart) => prevCart.filter((garment) => garment.id !== id));
+  }
+
   return (
     <>
-      <Header cart={cart} />
+      <Header cart={cart} removeToCart={removeToCart} />
 
       <main className="container">
         <h3 className="text-center">Our Collection</h3>
