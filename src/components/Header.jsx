@@ -87,6 +87,7 @@ export default function Header({ cart }) {
                       <td>{garment.selectedSize}</td>
                       <td>{garment.quantity}</td>
                       <td style={{ fontWeight: "bold" }}>${garment.price}</td>
+                      <td></td>
                     </tr>
                   ))}
                 </tbody>

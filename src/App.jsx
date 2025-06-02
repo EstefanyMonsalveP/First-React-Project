@@ -7,7 +7,7 @@ function App() {
   const [cart, setCart] = useState([]);
 
   // Add an item to the cart
-  //If the item already exists, it increase its quanty
+  //If the item already exists, it increase its quantity
   //If not, it adds the item as a new entry
   function addToCart(item) {
     const itemExists = cart.findIndex(
