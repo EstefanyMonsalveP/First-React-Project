@@ -55,6 +55,8 @@ function App() {
     setCart(updateQuantity);
   }
 
+  const cleanCart = () => setCart([]);
+
   return (
     <>
       <Header
@@ -62,6 +64,7 @@ function App() {
         removeToCart={removeToCart}
         increaseQuantity={increaseQuantity}
         decreaseQuantity={decreaseQuantity}
+        cleanCart={cleanCart}
       />
 
       <main className="container">

@@ -12,6 +12,7 @@ export default function Header({
   removeToCart,
   increaseQuantity,
   decreaseQuantity,
+  cleanCart,
 }) {
   const [showPopUp, setShowPopUp] = useState(false);
 
@@ -144,7 +145,9 @@ export default function Header({
                 Total to pay:{" "}
                 <span style={{ fontWeight: "bold" }}>{totalItemsPrice()}</span>
               </p>
-              <button className="btn-remove">Remove all items</button>
+              <button className="btn-remove" onClick={cleanCart}>
+                Remove all items
+              </button>
             </>
           )}
         </div>
