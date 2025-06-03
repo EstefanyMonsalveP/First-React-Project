@@ -35,6 +35,7 @@ function App() {
     }
   }
 
+  //Remove the chosen item from the cart
   function removeToCart(id) {
     setCart((prevCart) => prevCart.filter((garment) => garment.id !== id));
   }
@@ -53,7 +54,8 @@ function App() {
     });
     setCart(updateQuantity);
   }
-
+  //If the item is in the cart and the quantity is greater than MIN_ITEMS, decrease its quantity and return the item
+  //If item is not in the cart and the quantity is less that MIN_ITEMS, return it as is.
   function decreaseQuantity(id) {
     const updateQuantity = cart.map((item) => {
       if (item.id === id && item.quantity > MIN_ITEMS) {
@@ -67,6 +69,7 @@ function App() {
     setCart(updateQuantity);
   }
 
+  //Clear all items from the cart
   const cleanCart = () => setCart([]);
 
   return (

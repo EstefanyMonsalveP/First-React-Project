@@ -16,11 +16,15 @@ export default function Header({
 }) {
   const [showPopUp, setShowPopUp] = useState(false);
 
+  //Show the popUp Modal
   function activeShowPopUp() {
     setShowPopUp(true);
   }
 
+  //Check if the cart is empty
   const isEmpty = () => cart.length === 0;
+
+  //Sum all the items in the cart
   const totalItemsPrice = () => {
     const total = cart.reduce(
       (total, item) => total + item.quantity * item.price,
