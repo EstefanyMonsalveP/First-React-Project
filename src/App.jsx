@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import { db } from "./data/db";
 import Garment from "./components/Garment";
+import Footer from "./components/Footer";
 function App() {
   //Retrieve cart items from localStorage when the user enters the page
   const initialCart = () => {
@@ -95,6 +96,8 @@ function App() {
             />
           ))}
         </div>
+
+        <Footer />
       </main>
     </>
   );

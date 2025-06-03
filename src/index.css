@@ -124,7 +124,6 @@ p {
   text-align: center;
   font-family: serif;
   margin-bottom: 0.5rem;
-  margin-top: 0.5rem;
   margin-left: auto;
   margin-top: auto;
 }
@@ -230,4 +229,61 @@ td {
   height: 20px;
   width: auto;
   cursor: pointer;
+}
+
+.footer {
+  width: 100%;
+  padding: 10px;
+  height: 250px;
+  background-color: rgba(212, 212, 191, 0.822);
+  box-sizing: border-box;
+  align-items: flex-start;
+}
+
+.cont-footer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  max-width: 100%;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  flex: 1 1 100%;
+  min-width: 200px;
+}
+
+.footer-col p {
+  text-align: center;
+  margin: 5px 0;
+  cursor: pointer;
+  font-family: "arial";
+  font-size: 0.8rem;
+}
+
+h4 {
+  text-align: center;
+}
+
+h4::after {
+  content: "";
+  display: block;
+  width: 20%;
+  height: 0.3vh;
+  background-color: black;
+  margin: 5px auto 0 auto;
+}
+
+@media (min-width: 768px) {
+  .footer-col {
+    flex: 1 1 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .footer-col {
+    flex: 1 1 33.3333%;
+  }
 }
