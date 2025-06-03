@@ -71,7 +71,8 @@ export default function Header({
                 <img
                   src={cartIcon}
                   style={{
-                    width: "80px",
+                    width: "70px",
+                    height: "auto",
                   }}
                 />
               </div>

@@ -1,11 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import { db } from "./data/db";
 import Garment from "./components/Garment";
 function App() {
+  //Retrieve cart items from localStorage when the user enters the page
+  const initialCart = () => {
+    const localStorageCart = localStorage.getItem("cart");
+    return localStorageCart ? JSON.parse(localStorageCart) : [];
+  };
   const [data] = useState(db);
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(initialCart);
   const MIN_ITEMS = 1;
+
+  //Each time a change is made to the cart , add it to localStorage
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   // Add an item to the cart
   //If the item already exists, it increase its quantity
@@ -29,6 +39,8 @@ function App() {
     setCart((prevCart) => prevCart.filter((garment) => garment.id !== id));
   }
 
+  //If the item is in the cart, increase its quantity and return the item
+  //If item is not in the cart, return it as is.
   function increaseQuantity(id) {
     const updateQuantity = cart.map((item) => {
       if (item.id === id) {
