@@ -15,8 +15,13 @@ export default function Header({ cart, removeToCart }) {
   }
 
   const isEmpty = () => cart.length === 0;
-  const totalItemsPrice = () =>
-    cart.reduce((total, item) => total + item.quantity * item.price, 0);
+  const totalItemsPrice = () => {
+    const total = cart.reduce(
+      (total, item) => total + item.quantity * item.price,
+      0
+    );
+    return Math.round(total * 100) / 100;
+  };
 
   return (
     <>

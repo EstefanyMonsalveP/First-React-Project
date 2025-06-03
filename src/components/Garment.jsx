@@ -39,7 +39,7 @@ export default function Garment({ garment, addToCart }) {
             )}
           </div>
         </div>
-        <p className="price">{price}</p>
+        <p className="price">{price.toFixed(2)}</p>
         <button
           className="btn"
           onClick={() => {
