@@ -96,9 +96,8 @@ function App() {
             />
           ))}
         </div>
-
-        <Footer />
       </main>
+      <Footer />
     </>
   );
 }

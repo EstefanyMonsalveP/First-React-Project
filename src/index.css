@@ -237,7 +237,6 @@ td {
   height: 250px;
   background-color: rgba(212, 212, 191, 0.822);
   box-sizing: border-box;
-  align-items: flex-start;
 }
 
 .cont-footer {
