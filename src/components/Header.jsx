@@ -7,7 +7,12 @@ import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { faSquarePlus } from "@fortawesome/free-solid-svg-icons";
 import { faSquareMinus } from "@fortawesome/free-solid-svg-icons";
 
-export default function Header({ cart, removeToCart, increaseQuantity }) {
+export default function Header({
+  cart,
+  removeToCart,
+  increaseQuantity,
+  decreaseQuantity,
+}) {
   const [showPopUp, setShowPopUp] = useState(false);
 
   function activeShowPopUp() {
@@ -113,6 +118,7 @@ export default function Header({ cart, removeToCart, increaseQuantity }) {
                           <FontAwesomeIcon
                             icon={faSquareMinus}
                             className="iconsMinus-plus"
+                            onClick={() => decreaseQuantity(garment.id)}
                           />
                           {garment.quantity}
                           <FontAwesomeIcon

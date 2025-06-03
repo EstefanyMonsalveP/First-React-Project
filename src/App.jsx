@@ -5,6 +5,7 @@ import Garment from "./components/Garment";
 function App() {
   const [data] = useState(db);
   const [cart, setCart] = useState([]);
+  const MIN_ITEMS = 1;
 
   // Add an item to the cart
   //If the item already exists, it increase its quantity
@@ -41,12 +42,26 @@ function App() {
     setCart(updateQuantity);
   }
 
+  function decreaseQuantity(id) {
+    const updateQuantity = cart.map((item) => {
+      if (item.id === id && item.quantity > MIN_ITEMS) {
+        return {
+          ...item,
+          quantity: item.quantity - 1,
+        };
+      }
+      return item;
+    });
+    setCart(updateQuantity);
+  }
+
   return (
     <>
       <Header
         cart={cart}
         removeToCart={removeToCart}
         increaseQuantity={increaseQuantity}
+        decreaseQuantity={decreaseQuantity}
       />
 
       <main className="container">
