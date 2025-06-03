@@ -1,5 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faFacebook}
+import { faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 export default function Footer() {
   return (
@@ -12,7 +14,11 @@ export default function Footer() {
             <p>Work With Us</p>
             <p>Our Stores</p>
 
-            <FontAwesomeIcon icon={faFacebook} />
+            <div className="social-media">
+              <FontAwesomeIcon icon={faFacebook} />
+              <FontAwesomeIcon icon={faInstagram} />
+              <FontAwesomeIcon icon={faTwitter} />
+            </div>
           </div>
           <div className="footer-col">
             <h4>Insterest Links</h4>
