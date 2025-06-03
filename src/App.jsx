@@ -28,9 +28,26 @@ function App() {
     setCart((prevCart) => prevCart.filter((garment) => garment.id !== id));
   }
 
+  function increaseQuantity(id) {
+    const updateQuantity = cart.map((item) => {
+      if (item.id === id) {
+        return {
+          ...item,
+          quantity: item.quantity + 1,
+        };
+      }
+      return item;
+    });
+    setCart(updateQuantity);
+  }
+
   return (
     <>
-      <Header cart={cart} removeToCart={removeToCart} />
+      <Header
+        cart={cart}
+        removeToCart={removeToCart}
+        increaseQuantity={increaseQuantity}
+      />
 
       <main className="container">
         <h3 className="text-center">Our Collection</h3>
