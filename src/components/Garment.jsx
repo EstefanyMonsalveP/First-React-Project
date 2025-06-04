@@ -1,5 +1,6 @@
 import { useState } from "react";
-export default function Garment({ garment, addToCart, showConfirmation }) {
+import { toast } from "react-toastify";
+export default function Garment({ garment, addToCart }) {
   //Destructure garment object
   const { id, name, image, reference, sizes, price } = garment;
 
@@ -45,7 +46,7 @@ export default function Garment({ garment, addToCart, showConfirmation }) {
           onClick={() => {
             //Alert to prompt the user to select the size
             if (!selectedSize) {
-              alert("Please select a size before adding to cart");
+              toast.warning("Select a size");
               return;
             }
 
@@ -62,8 +63,6 @@ export default function Garment({ garment, addToCart, showConfirmation }) {
 
             //Reset selected size after adding to cart
             setSelectedSize(null);
-
-            showConfirmation();
           }}
         >
           Add to cart

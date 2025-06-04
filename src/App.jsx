@@ -3,6 +3,8 @@ import Header from "./components/Header";
 import { db } from "./data/db";
 import Garment from "./components/Garment";
 import Footer from "./components/Footer";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   //Retrieve cart items from localStorage when the user enters the page
   const initialCart = () => {
@@ -11,21 +13,12 @@ function App() {
   };
   const [data] = useState(db);
   const [cart, setCart] = useState(initialCart);
-  const [showAlert, setShowAlert] = useState(false);
   const MIN_ITEMS = 1;
 
   //Each time a change is made to the cart , add it to localStorage
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
-
-  function showConfirmation() {
-    setShowAlert(true);
-
-    setTimeout(() => {
-      setShowAlert(false);
-    }, 2000);
-  }
 
   // Add an item to the cart
   //If the item already exists, it increase its quantity
@@ -43,6 +36,8 @@ function App() {
       item.quantity = 1;
       setCart([...cart, item]);
     }
+
+    toast.success("Item added to cart");
   }
 
   //Remove the chosen item from the cart
@@ -102,12 +97,12 @@ function App() {
               garment={garment}
               setCart={setCart}
               addToCart={addToCart}
-              showConfirmation={showConfirmation}
             />
           ))}
         </div>
       </main>
       <Footer />
+      <ToastContainer position="bottom-left" hideProgressBar={true} />
     </>
   );
 }
