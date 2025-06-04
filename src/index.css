@@ -5,7 +5,23 @@
 .header img {
   width: 100%;
   height: auto;
+  min-height: auto;
   display: block;
+}
+
+@media (max-width: 768px) {
+  .header {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 }
 
 .header .carts {
@@ -251,7 +267,7 @@ td {
   flex-direction: column;
   padding: 10px;
   flex: 1 1 100%;
-  min-width: 200px;
+  min-width: 0;
 }
 
 .footer-col p {
@@ -259,7 +275,9 @@ td {
   margin: 5px 0;
   cursor: pointer;
   font-family: "arial";
-  font-size: 0.8rem;
+  font-size: 0.5rem;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 h4 {
@@ -279,11 +297,16 @@ h4::after {
   .footer-col {
     flex: 1 1 50%;
   }
+
+  .footer-col p {
+    font-size: 0.8rem;
+  }
 }
 
 @media (min-width: 992px) {
   .footer-col {
     flex: 1 1 33.3333%;
+    font-size: 1rem;
   }
 }
 
