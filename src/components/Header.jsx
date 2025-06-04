@@ -51,6 +51,7 @@ export default function Header({
               padding: 0,
               cursor: "pointer",
             }}
+            onMouseOut={() => setShowPopUp(false)}
           >
             <img src={cartIcon} alt="Shopping cart" className="cart-button" />
           </button>

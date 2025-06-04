@@ -9,21 +9,6 @@
   display: block;
 }
 
-@media (max-width: 768px) {
-  .header {
-    width: 100%;
-    height: auto;
-    margin: 0;
-    padding: 0;
-  }
-
-  .header img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-}
-
 .header .carts {
   position: absolute;
   right: 20px;
@@ -35,8 +20,25 @@
 }
 
 .header .cart-button {
-  width: 29px;
-  height: 29px;
+  width: 26px;
+  height: 26px;
+}
+
+.header .delivery-button {
+  width: 37px;
+  height: 37px;
+}
+
+@media (max-width: 768px) {
+  .header .cart-button {
+    width: 16px;
+    height: 16px;
+  }
+
+  .header .delivery-button {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .popup-modal {
@@ -56,11 +58,6 @@
 
 .popup-modal.block {
   display: block;
-}
-
-.header .delivery-button {
-  width: 37px;
-  height: 37px;
 }
 
 .container {
