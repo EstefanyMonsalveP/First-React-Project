@@ -100,7 +100,7 @@ export default function Header({
                 </thead>
                 <tbody>
                   {cart.map((garment) => (
-                    <tr key={garment.id}>
+                    <tr key={`${garment.id}-${garment.selectedSize}`}>
                       <td>
                         <img src={garment.image}></img>
                       </td>
