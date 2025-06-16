@@ -15,6 +15,8 @@ For this application the data is in the document from
 -Font Awsome
 -CSS
 
+-
+
 ## Data Source
 
 This application is not connected to a real database.
@@ -23,3 +25,8 @@ Instead, it uses a local JSON file to simulate product data and cart behavior.
 # Clone de repostory
 
 https://github.com/EstefanyMonsalveP/First-React-Project
+cd clothing store
+
+npm install 
+
+npm run dev
