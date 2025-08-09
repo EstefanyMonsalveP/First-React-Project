@@ -13,6 +13,8 @@ export default function Header({
   increaseQuantity,
   decreaseQuantity,
   cleanCart,
+  isEmpty,
+  totalItemsPrice
 }) {
   const [showPopUp, setShowPopUp] = useState(false);
 
@@ -21,17 +23,7 @@ export default function Header({
     setShowPopUp(true);
   }
 
-  //Check if the cart is empty
-  const isEmpty = () => cart.length === 0;
 
-  //Sum all the items in the cart
-  const totalItemsPrice = () => {
-    const total = cart.reduce(
-      (total, item) => total + item.quantity * item.price,
-      0
-    );
-    return Math.round(total * 100) / 100;
-  };
 
   return (
     <>
