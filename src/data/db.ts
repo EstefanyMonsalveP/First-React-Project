@@ -1,4 +1,7 @@
-export const db = [
+import type { Garment, Sizes } from "../types/index.js";
+
+//Database simulation
+export const db : Garment[] = [
   {
     id: 1,
     name: "Classic White T-Shirt",

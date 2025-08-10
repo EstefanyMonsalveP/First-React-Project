@@ -6,6 +6,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { faSquarePlus } from "@fortawesome/free-solid-svg-icons";
 import { faSquareMinus } from "@fortawesome/free-solid-svg-icons";
+import type { CartItem , Garment} from "../types/index.js";
+
+type HeaderProps = {
+  cart: CartItem[]
+  removeToCart: (id: Garment["id"]) => void
+  increaseQuantity: (id: Garment["id"]) => void
+  decreaseQuantity: (id: Garment["id"]) => void
+  cleanCart: () => void
+  isEmpty: () => boolean
+  totalItemsPrice: () => number
+}
 
 export default function Header({
   cart,
@@ -15,15 +26,13 @@ export default function Header({
   cleanCart,
   isEmpty,
   totalItemsPrice
-}) {
+} : HeaderProps) {
   const [showPopUp, setShowPopUp] = useState(false);
 
   //Show the popUp Modal
   function activeShowPopUp() {
     setShowPopUp(true);
   }
-
-
 
   return (
     <>

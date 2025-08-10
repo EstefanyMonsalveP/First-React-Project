@@ -1,13 +1,21 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
-export default function Garment({ garment, addToCart }) {
+import type {Garment,Sizes} from '../types/index.js'
+
+export type SizeKey = keyof Sizes; 
+export type GarmentProps = {
+  garment : Garment, 
+  addToCart: (item: any) => void
+}
+
+export default function Garment({ garment, addToCart } : GarmentProps) {
   //Destructure garment object
   const { id, name, image, reference, sizes, price } = garment;
 
   //useState to select a size for each garment
-  const [selectedSize, setSelectedSize] = useState(null);
+  const [selectedSize, setSelectedSize] = useState<SizeKey | null> (null);
   //Select available sizes
-  const availableSizes = Object.entries(sizes)
+  const availableSizes = (Object.entries(sizes) as [SizeKey, boolean][])
     .filter(([, available]) => available)
     .map(([size]) => size);
 

@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import { db } from "../data/db";
+import { db } from "../data/db.js";
 import { toast } from "react-toastify";
+import type { CartItem, Garment } from "../types/index.js";
 
 export const useCart = () => {
     //Retrieve cart items from localStorage when the user enters the page
-    const initialCart = () => {
+    const initialCart = () : CartItem[] => {
     const localStorageCart = localStorage.getItem("cart");
     return localStorageCart ? JSON.parse(localStorageCart) : [];
   };
@@ -20,31 +21,31 @@ export const useCart = () => {
   // Add an item to the cart
   //If the item already exists, it increase its quantity
   //If not, it adds the item as a new entry
-  function addToCart(item) {
+  function addToCart(item : CartItem) {
     const itemExists = cart.findIndex(
       (garment) =>
         garment.id === item.id && garment.selectedSize === item.selectedSize
     );
     if (itemExists >= 0) {
       const updateCart = [...cart];
-      updateCart[itemExists].quantity++;
+      updateCart[itemExists]!.quantity++;
       setCart(updateCart);
     } else {
-      item.quantity = 1;
-      setCart([...cart, item]);
+      const newItem : CartItem = {...item,quantity:1}
+      setCart([...cart, newItem]);
     }
 
     toast.success("Item added to cart");
   }
 
   //Remove the chosen item from the cart
-  function removeToCart(id) {
+  function removeToCart(id: Garment['id']) {
     setCart((prevCart) => prevCart.filter((garment) => garment.id !== id));
   }
 
   //If the item is in the cart, increase its quantity and return the item
   //If item is not in the cart, return it as is.
-  function increaseQuantity(id) {
+  function increaseQuantity(id: Garment['id']) {
     const updateQuantity = cart.map((item) => {
       if (item.id === id) {
         return {
@@ -58,7 +59,7 @@ export const useCart = () => {
   }
   //If the item is in the cart and the quantity is greater than MIN_ITEMS, decrease its quantity and return the item
   //If item is not in the cart and the quantity is less that MIN_ITEMS, return it as is.
-  function decreaseQuantity(id) {
+  function decreaseQuantity(id :Garment['id']) {
     const updateQuantity = cart.map((item) => {
       if (item.id === id && item.quantity > MIN_ITEMS) {
         return {
@@ -85,6 +86,7 @@ export const useCart = () => {
 
   //Clear all items from the cart
   const cleanCart = () => setCart([]);
+  
     return {
         data,
         cart,
